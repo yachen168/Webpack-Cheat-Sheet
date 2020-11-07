@@ -38,7 +38,7 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         /* 要使用多個 loader 用 use，use 陣列中 loader 執行順序：由後往前 依序執行 */
         use: [
-          /* 將 JS 字符串生成為 <style> 標籤 */
+          /* 創建 <style> 標籤，將 js 中的樣式資源插入進行，並添加到 head 中 */
           'style-loader',
           /* 將 CSS 轉換成 CommonJS module，內容為字串，加載到 .js 中 */
           'css-loader',
