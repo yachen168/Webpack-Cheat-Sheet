@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import moduleA from './module/moduleA.js';
+import moduleA from './moduleA.js';
 import '../assets/style.scss';
 import ParrotImg from '../assets/parrot.jpeg';
 

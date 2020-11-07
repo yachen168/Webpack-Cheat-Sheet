@@ -107,14 +107,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _module_moduleA_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module/moduleA.js */ \"./src/module/moduleA.js\");\n/* harmony import */ var _assets_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/style.scss */ \"./assets/style.scss\");\n/* harmony import */ var _assets_parrot_jpeg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/parrot.jpeg */ \"./assets/parrot.jpeg\");\n;\n\n\n\n\nfunction appendText(){\n  document.querySelector('.content-entry').innerText='這是 entry 檔案內容'\n}\n\nfunction appendImg(){\n  const parrotImgContainer = document.querySelector('.img-container')\n  const parrotImg = new Image();\n  parrotImg.src = _assets_parrot_jpeg__WEBPACK_IMPORTED_MODULE_3__.default\n\n  parrotImgContainer.appendChild(parrotImg)\n}\n\nappendText()\nappendImg()\n;(0,_module_moduleA_js__WEBPACK_IMPORTED_MODULE_1__.default)()\n\n//# sourceURL=webpack://webpack-practice/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _moduleA_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./moduleA.js */ \"./src/moduleA.js\");\n/* harmony import */ var _assets_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/style.scss */ \"./assets/style.scss\");\n/* harmony import */ var _assets_parrot_jpeg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/parrot.jpeg */ \"./assets/parrot.jpeg\");\n;\n\n\n\n\nfunction appendText(){\n  document.querySelector('.content-entry').innerText='這是 entry 檔案內容'\n}\n\nfunction appendImg(){\n  const parrotImgContainer = document.querySelector('.img-container')\n  const parrotImg = new Image();\n  parrotImg.src = _assets_parrot_jpeg__WEBPACK_IMPORTED_MODULE_3__.default\n\n  parrotImgContainer.appendChild(parrotImg)\n}\n\nappendText()\nappendImg()\n;(0,_moduleA_js__WEBPACK_IMPORTED_MODULE_1__.default)()\n\n//# sourceURL=webpack://webpack-practice/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/module/moduleA.js":
-/*!*******************************!*\
-  !*** ./src/module/moduleA.js ***!
-  \*******************************/
+/***/ "./src/moduleA.js":
+/*!************************!*\
+  !*** ./src/moduleA.js ***!
+  \************************/
 /*! namespace exports */
 /*! export default [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
@@ -122,7 +122,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var loda
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* export default binding */ __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {\n  const moduleContent = document.querySelector('.content-module');\n  moduleContent.innerText = '這是 moduleA 內容';\n}\n\n//# sourceURL=webpack://webpack-practice/./src/module/moduleA.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* export default binding */ __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {\n  const moduleContent = document.querySelector('.content-module');\n  moduleContent.innerText = '這是 moduleA 內容';\n}\n\n//# sourceURL=webpack://webpack-practice/./src/moduleA.js?");
 
 /***/ })
 
