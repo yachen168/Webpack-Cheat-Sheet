@@ -51,6 +51,8 @@ module.exports = {
         test: /\.(png|svg|jpg|gif|jpeg)$/,
         loader: 'url-loader',
         options: {
+          /* 大於 8K 則轉 base64 (1 KB = 1024 Bytes，8*1024=8192) */
+          /* base64 優點：減少請求次數; 缺點：體積大 */
           limit: 8192,
           /* 指定輸出路徑 */
           outputPath: 'images'
