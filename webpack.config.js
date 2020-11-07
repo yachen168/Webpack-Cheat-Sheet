@@ -9,6 +9,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  // devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
@@ -24,10 +25,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/i,
         use: [
+          // 將 JS 字符串生成為 <style> 標籤
           'style-loader',
+          // 將 CSS 轉換成 CommonJS module
           'css-loader',
+          // 將 Sass 編譯成 CSS
+          'sass-loader',
         ],
       },
       {
