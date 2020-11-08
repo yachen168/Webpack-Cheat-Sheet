@@ -4,11 +4,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');   /* 每次 buil
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/main.js',
   output: {
     /* 輸出文件名 */
     filename: 'bundle.js',
-    /* 輸出路徑 (絕對路徑)，__dirname 為 nodejs 變量，代表當前文件的目錄絕對路徑 */
+    /* 輸出路徑 (絕對路徑)，resolve 用來拼接絕對路徑，__dirname 為 nodejs 變量，代表當前文件的目錄絕對路徑*/
     path: path.resolve(__dirname, 'dist'),
     publicPath: './'
   },
@@ -18,8 +18,8 @@ module.exports = {
     /* 建立一個「空的」 HTML 檔案，引入所有打包後資源(例如：JS、CSS) */
     new HtmlWebpackPlugin({
       title: 'Development',
-      /* 複製 index.html 文件，引入所有打包後資源(例如：JS、CSS) */
-      template: 'index.html'
+      /* 複製 ./src/index.html 文件，引入所有打包後資源(例如：JS、CSS) */
+      template: './src/index.html'
     })
   ],
   /* 自動編譯，不會有任何輸出(dist 資料夾內容不變)，需安裝 webpack-dev-server */
@@ -53,7 +53,9 @@ module.exports = {
         options: {
           /* 大於 8K 則轉 base64 (1 KB = 1024 Bytes，8*1024=8192) */
           /* base64 優點：減少請求次數; 缺點：體積大 */
-          limit: 8192,
+          // limit: 8192,
+          /* 不將檔案轉成 base64 */
+          limit: false,
           /* 指定輸出路徑 */
           outputPath: 'images'
         }

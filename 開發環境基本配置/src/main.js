@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import moduleA from './moduleA.js';
-import '../assets/style.scss';
-import ParrotImg from '../assets/parrot.jpeg';
+import './assets/style.scss';
+import ParrotImg from './assets/parrot.jpeg';
 
 function appendText(){
   document.querySelector('.content-entry').innerText='這是 entry 檔案內容'
