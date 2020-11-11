@@ -1,12 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');   /* 每次 build 前清理 /dist 文件夹 */
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); /* separate CSS from js */
 
 module.exports = {
   mode: 'development',
   entry: './src/main.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'js/bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: './'
   },
@@ -15,6 +16,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Development',
       template: './src/index.html'
+    }),
+    new MiniCssExtractPlugin({
+      /* css 輸出路徑 */
+      filename: 'css/main.css'
     })
   ],
   devServer: {
@@ -25,17 +30,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.s[ac]ss$/i,
         use: [
-          'style-loader',
-          'css-loader'
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
         ],
       },
       {
         test: /\.(png|svg|jpg|gif|jpeg)$/,
         loader: 'url-loader',
         options: {
-          // limit: 8192,
           limit: false,
           outputPath: 'images'
         }

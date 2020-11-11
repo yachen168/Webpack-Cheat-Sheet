@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import moduleA from './moduleA.js';
-import './assets/css/header.css';
-import './assets/css/section.css';
+import './assets/style/main.scss';
 import ParrotImg from './assets/parrot.jpeg';
 
 function appendText(){
