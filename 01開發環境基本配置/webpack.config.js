@@ -10,7 +10,8 @@ module.exports = {
     filename: 'bundle.js',
     /* 輸出路徑 (絕對路徑)，resolve 用來拼接絕對路徑，__dirname 為 nodejs 變量，代表當前文件的目錄絕對路徑*/
     path: path.resolve(__dirname, 'dist'),
-    publicPath: './'
+    publicPath: './',
+    assetModuleFilename: 'images/[hash:10][ext][query]'
   },
   // devtool: 'inline-source-map',
   plugins: [
@@ -49,16 +50,18 @@ module.exports = {
       /* 處理圖片資源(.html 中的) */
       {
         test: /\.(png|svg|jpg|gif|jpeg)$/,
-        loader: 'url-loader',
-        options: {
-          /* 大於 8K 則轉 base64 (1 KB = 1024 Bytes，8*1024=8192) */
-          /* base64 優點：減少請求次數; 缺點：體積大 */
-          // limit: 8192,
-          /* 不將檔案轉成 base64 */
-          limit: false,
-          /* 指定輸出路徑 */
-          outputPath: 'images'
-        }
+        type: 'asset/resource',
+
+        /* ======= webpack4 作法====== */
+        // options: {
+        //   /* 大於 8K 則轉 base64 (1 KB = 1024 Bytes，8*1024=8192) */
+        //   /* base64 優點：減少請求次數; 缺點：體積大 */
+        //   // limit: 8192,
+        //   /* 不將檔案轉成 base64 */
+        //   limit: false,
+        //   /* 指定輸出路徑 */
+        //   outputPath: 'images'
+        // }
       },
       /* 處理 HTML 中的 <img> 圖片資源，再丟給 url-loader 處理 */
       {
