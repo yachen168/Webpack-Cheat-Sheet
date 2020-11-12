@@ -9,7 +9,8 @@ module.exports = {
   output: {
     filename: 'js/bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: './'
+    publicPath: './',
+    assetModuleFilename: 'images/[hash:10][ext][query]'
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
@@ -39,11 +40,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif|jpeg)$/,
-        loader: 'url-loader',
-        options: {
-          limit: false,
-          outputPath: 'images'
-        }
+        type: 'asset/resource',
       },
       {
         test: /\.html$/i,
